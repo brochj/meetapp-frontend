@@ -14,23 +14,16 @@ export function* signIn({ payload }) {
       email,
       password,
     });
-
+    console.tron.log(response.data);
     const { token, user } = response.data;
-
-    if (!user.provider) {
-      toast.error('Usuário não é prestador');
-      yield put(signFailure());
-      return;
-    }
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
-    // put é para disparar actions
     yield put(signInSuccess(token, user));
 
     history.push('/dashboard');
-  } catch (eer) {
-    toast.error('Falha na autenticação, verifique seus dados');
+  } catch (err) {
+    toast.error(`Falha na autenticação ${err}, verifique seus dados`);
     yield put(signFailure());
   }
 }
