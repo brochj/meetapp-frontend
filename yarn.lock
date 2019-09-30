@@ -2002,7 +2002,7 @@ babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-eslint@10.0.3, babel-eslint@^10.0.3:
+babel-eslint@10.0.3:
   version "10.0.3"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.0.3.tgz#81a2c669be0f205e19462fed2482d33e4687a88a"
   integrity sha512-z3U7eMY6r/3f3/JB9mTsLjyxrv0Yb1zb8PCWCLpguxfCzBIZUwy23R1t/XKewP+8mEN2Ck8Dtr4q20z6ce6SoA==
@@ -3199,10 +3199,10 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   dependencies:
     cssom "0.3.x"
 
-customize-cra@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/customize-cra/-/customize-cra-0.8.0.tgz#011e65fde9e443733668551740b76e3eefe95822"
-  integrity sha512-fIiuM4sJfDmTc+0ctNV0BCnSTsfq76bpAOHvUCrCzWaG1dHpHw2Yfec+liH4EdicG5TuwhYLFt2yY2ocJ8HoxA==
+customize-cra@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/customize-cra/-/customize-cra-0.7.0.tgz#0116318557d365f560d5736304644da5d6124c0a"
+  integrity sha512-ayLAG7E7Odr4ZtOlhXiJO+ufny8TAbHC1EewH2YmHjct1tKkVgwqVGoFO6Ua3z8W0Vfkw512M4XWxR4ENX3qJw==
   dependencies:
     lodash.flow "^3.5.0"
 
@@ -3938,7 +3938,7 @@ eslint@^6.1.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-eslint@^6.5.0:
+eslint@^6.4.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.5.0.tgz#304623eec903969dd5c9f2d61c6ce3d6ecec8750"
   integrity sha512-IIbSW+vKOqMatPmS9ayyku4tvWxHY2iricSRtOz6+ZA5IPRlgXzEL0u/j6dr4eha0ugmhMwDTqxtmNu3kj9O4w==
