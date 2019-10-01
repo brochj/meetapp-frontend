@@ -67,11 +67,12 @@ export const Footer = styled.div`
 export const Info = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
   margin-right: 35px;
   svg {
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
     color: rgba(255, 255, 255, 0.5);
   }
 
