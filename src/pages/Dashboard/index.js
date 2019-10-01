@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdChevronRight, MdAddCircleOutline } from 'react-icons/md';
-import { Container, Content } from './styles';
+import { Container, Content, ContentItem, Date } from './styles';
 
 import Button from '~/components/Button';
 
@@ -42,14 +42,14 @@ export default function Dashboard() {
 
       <Content>
         {meetups.map(meetup => (
-          <>
+          <ContentItem>
             <strong>{meetup.title}</strong>
 
-            <div>
+            <Date>
               <span>{meetup.date}</span>
               <MdChevronRight />
-            </div>
-          </>
+            </Date>
+          </ContentItem>
         ))}
       </Content>
     </Container>
