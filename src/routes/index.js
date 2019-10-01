@@ -9,6 +9,7 @@ import Dashboard from '~/pages/Dashboard';
 import Profile from '~/pages/Profile';
 import Details from '~/pages/Details';
 import Edit from '~/pages/Edit';
+import New from '~/pages/New';
 
 export default function Routes() {
   return (
@@ -19,7 +20,8 @@ export default function Routes() {
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/:MeetupId/details" component={Details} isPrivate />
-      <Route path="/new" component={Edit} isPrivate />
+      <Route path="/:MeetupId/edit" component={Edit} isPrivate />
+      <Route path="/new" component={New} isPrivate />
 
       <Route path="/" component={() => <h1>404 Page Not Found</h1>} />
     </Switch>

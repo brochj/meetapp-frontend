@@ -11,7 +11,7 @@ import Button from '~/components/Button';
 
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
-export default function Edit() {
+export default function New() {
   const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
 
@@ -35,7 +35,7 @@ export default function Edit() {
 
         <Button type="submit">
           <MdAddCircleOutline />
-          Salvar meetup
+          Criar meetup
         </Button>
       </Form>
     </Container>
