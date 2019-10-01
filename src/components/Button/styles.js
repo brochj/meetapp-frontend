@@ -13,6 +13,9 @@ export const NButton = styled.button`
   transition: background 0.3s;
 
   &:hover {
-    background: ${darken(0.06, '#d44059')};
+    background: ${props =>
+      props.background
+        ? darken(0.1, props.background)
+        : darken(0.06, '#d44059')};
   }
 `;
