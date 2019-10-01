@@ -18,16 +18,12 @@ export default function Details() {
         <h1>Meetup de React Native</h1>
         <div>
           <Button background="#4DBAF9">
-            <>
-              <MdEdit />
-              Editar
-            </>
+            <MdEdit />
+            Editar
           </Button>
           <Button>
-            <>
-              <MdDeleteForever />
-              Cancelar
-            </>
+            <MdDeleteForever />
+            Cancelar
           </Button>
         </div>
       </header>
