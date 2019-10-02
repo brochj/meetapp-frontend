@@ -42,34 +42,6 @@ export const Container = styled.div`
       }
     }
 
-    span {
-      color: #fb6f91;
-      align-self: flex-start;
-      margin: 0 0 10px;
-    }
-
-    hr {
-      border: 0;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.1);
-      margin: 10px 0 20px;
-    }
-
-    button {
-      display: flex;
-      justify-content: center;
-      height: 42px;
-      width: fit-content;
-      align-self: flex-end;
-      margin-top: 10px;
-
-      svg {
-        margin-right: 10px;
-        height: 20px;
-        width: 20px;
-      }
-    }
-
     a {
       color: #ffff;
       margin-top: 15px;
@@ -79,6 +51,35 @@ export const Container = styled.div`
       &:hover {
         opacity: 1;
       }
+    }
+  }
+`;
+
+export const ButtonView = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  button {
+    display: flex;
+    justify-content: center;
+    height: 42px;
+    width: fit-content;
+    align-self: flex-end;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    svg {
+      margin-right: 10px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .cancelBtn {
+    transition: background 0.3s;
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
     }
   }
 `;

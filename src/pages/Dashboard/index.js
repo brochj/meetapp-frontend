@@ -40,7 +40,7 @@ export default function Dashboard() {
     <Container>
       <header>
         <h1>Meus meetups</h1>
-        <Link to="/new">
+        <Link to="/new" style={{ textDecoration: 'none' }}>
           <Button>
             <MdAddCircleOutline />
             Novo Meetup
@@ -51,9 +51,8 @@ export default function Dashboard() {
       <Content>
         {data.map(meetup => (
           <ContentItem
-            onClick={() =>
-              history.push(`${meetup.id}/details`, { state: meetup })
-            }
+            past={meetup.past}
+            onClick={() => history.push(`${meetup.id}/details`, meetup)}
             key={String(meetup.id)}
           >
             <strong>{meetup.title}</strong>

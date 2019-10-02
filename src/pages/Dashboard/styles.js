@@ -45,6 +45,7 @@ export const ContentItem = styled.div`
   padding: 20px 25px;
   cursor: pointer;
   transition: background 0.3s;
+  opacity: ${props => (props.past ? 0.3 : 1)};
 
   &:hover {
     background: rgba(0, 0, 0, 0.5);

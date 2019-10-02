@@ -13,7 +13,7 @@ export default function Header() {
     <Container>
       <Content>
         <nav>
-          <Link to="/dashboard">
+          <Link to="/dashboard" style={{ textDecoration: 'none' }}>
             <Logo size={40} />
           </Link>
         </nav>

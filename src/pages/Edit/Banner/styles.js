@@ -10,6 +10,7 @@ export const Container = styled.div`
   max-width: 900px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
+  width: 100%;
 
   label {
     cursor: pointer;

@@ -5,11 +5,11 @@ import { MdAddAPhoto } from 'react-icons/md';
 import api from '~/services/api';
 import { Container } from './styles';
 
-export default function AvartInput() {
+export default function BannerInput({ fileUrl }) {
   const { defaultValue, registerField } = useField('banner'); // Pega os valores de 'banner'  que esta dalvo no redux
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
-  const [preview, setPreview] = useState(defaultValue && defaultValue.url);
+  const [preview, setPreview] = useState(fileUrl);
 
   const ref = useRef();
 
@@ -17,7 +17,7 @@ export default function AvartInput() {
     // Passando os dados pro unform
     if (ref.current) {
       registerField({
-        name: 'banner',
+        name: 'file_id',
         ref: ref.current,
         path: 'dataset.file',
       });

@@ -35,6 +35,18 @@ export function deleteMeetupSuccess() {
     type: '@meetup/DELETE_MEETUP_SUCCESS',
   };
 }
+export function updateMeetupRequest(meetup) {
+  return {
+    type: '@meetup/UPDATE_MEETUP_REQUEST',
+    payload: { meetup },
+  };
+}
+
+export function updateMeetupSuccess() {
+  return {
+    type: '@meetup/UPDATE_MEETUP_SUCCESS',
+  };
+}
 
 export function meetupFailure() {
   return {

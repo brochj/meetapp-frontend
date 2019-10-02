@@ -9,13 +9,14 @@ import {
   meetupFailure,
   createMeetupSuccess,
   deleteMeetupSuccess,
+  updateMeetupSuccess,
 } from './actions';
 
 export function* getMeetups() {
   try {
     const response = yield call(api.get, 'organizing');
 
-    yield put(getMeetupsSuccess(response.data));
+    yield put(getMeetupsSuccess(response.data.reverse()));
   } catch (err) {
     toast.error('Erro ao buscar os meetups, tente novamente mais tarde');
 
@@ -34,6 +35,23 @@ export function* createMeetup({ payload }) {
   } catch (err) {
     toast.error(
       'Erro ao criar o meetup, verifique os campos ou tente novamente mais tarde'
+    );
+
+    yield put(meetupFailure());
+  }
+}
+
+export function* updateMeetup({ payload }) {
+  try {
+    const { meetup } = payload;
+    const response = yield call(api.put, `meetups/${meetup.id}`, meetup);
+
+    yield put(updateMeetupSuccess(response.data));
+    toast.success('Meetup atualizado com sucesso');
+    history.push('/dashboard');
+  } catch (err) {
+    toast.error(
+      'Erro ao atualizar o meetup, verifique os campos ou tente novamente mais tarde'
     );
 
     yield put(meetupFailure());
@@ -59,5 +77,6 @@ export function* deleteMeetup({ payload }) {
 export default all([
   takeLatest('@meetup/GET_MEETUPS_REQUEST', getMeetups),
   takeLatest('@meetup/CREATE_MEETUP_REQUEST', createMeetup),
+  takeLatest('@meetup/UPDATE_MEETUP_REQUEST', updateMeetup),
   takeLatest('@meetup/DELETE_MEETUP_REQUEST', deleteMeetup),
 ]);

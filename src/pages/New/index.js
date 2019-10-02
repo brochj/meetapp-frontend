@@ -13,14 +13,13 @@ import { createMeetupRequest } from '~/store/modules/meetup/actions';
 
 export default function New() {
   const dispatch = useDispatch();
-  const profile = useSelector(state => state.user.profile);
 
   function handleSubmit(data) {
     dispatch(createMeetupRequest(data));
   }
   return (
     <Container>
-      <Form initialData={profile} onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Banner name="file_id" />
         <Input name="title" placeholder="Título do Meetup" />
         <Input multiline name="description" placeholder="Descrição completa" />
