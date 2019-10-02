@@ -16,7 +16,6 @@ export default function New() {
   const profile = useSelector(state => state.user.profile);
 
   function handleSubmit(data) {
-    console.tron.log('data', data);
     dispatch(createMeetupRequest(data));
   }
   return (

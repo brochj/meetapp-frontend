@@ -2,6 +2,7 @@ import { all, takeLatest, call, put } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
 import api from '~/services/api';
+import history from '~/services/history';
 
 import {
   getMeetupsSuccess,
@@ -27,8 +28,12 @@ export function* createMeetup({ payload }) {
     const response = yield call(api.post, 'meetups', meetup);
 
     yield put(createMeetupSuccess(response.data));
+    toast.success('Meetup criado com sucesso');
+    history.push('/dashboard');
   } catch (err) {
-    toast.error('Erro ao criar os meetups, tente novamente mais tarde');
+    toast.error(
+      'Erro ao criar o meetup, verifique os campos ou tente novamente mais tarde'
+    );
 
     yield put(meetupFailure());
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdAddCircleOutline } from 'react-icons/md';
-
 import { Container } from './styles';
 
 import Banner from './Banner';
