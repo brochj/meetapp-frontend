@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { MdDeleteForever, MdEdit, MdPlace, MdDateRange } from 'react-icons/md';
 import {
   Container,
@@ -13,12 +12,9 @@ import banner from '~/assets/banner.png';
 import Button from '~/components/Button';
 
 export default function Details({ match, location }) {
-  const { meetupId } = match.params;
   const meetup = location.state.state;
   console.tron.log(location.state);
-  // const meetup = useSelector(state =>
-  //   state.meetup.meetups.find(m => Number(m.id) === Number(meetupId))
-  // );
+
   return (
     <Container>
       <header>

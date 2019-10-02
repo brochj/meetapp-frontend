@@ -6,7 +6,7 @@ import api from '~/services/api';
 import { Container } from './styles';
 
 export default function AvartInput() {
-  const { defaultValue, registerField } = useField('banner'); // Pega os valores de 'banner'  que esta dalvo no redux
+  const { defaultValue, registerField } = useField('banner'); // Pega os valores de 'file_id'  que esta dalvo no redux
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
@@ -17,12 +17,12 @@ export default function AvartInput() {
     // Passando os dados pro unform
     if (ref.current) {
       registerField({
-        name: 'banner',
+        name: 'file_id',
         ref: ref.current,
         path: 'dataset.file',
       });
     }
-  }, [ref, registerField]);
+  }, []); // eslint-disable-line
 
   async function handleChange(e) {
     const data = new FormData();

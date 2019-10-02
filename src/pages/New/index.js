@@ -9,29 +9,25 @@ import Banner from './Banner';
 
 import Button from '~/components/Button';
 
-import { updateProfileRequest } from '~/store/modules/user/actions';
+import { createMeetupRequest } from '~/store/modules/meetup/actions';
 
 export default function New() {
   const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
 
   function handleSubmit(data) {
-    dispatch(updateProfileRequest(data));
+    console.tron.log('data', data);
+    dispatch(createMeetupRequest(data));
   }
   return (
     <Container>
-      <Banner name="banner" />
       <Form initialData={profile} onSubmit={handleSubmit}>
+        <Banner name="file_id" />
         <Input name="title" placeholder="Título do Meetup" />
-        <textarea
-          name="description"
-          cols="40"
-          rows="5"
-          placeholder="Descrição completa"
-        />
+        <Input multiline name="description" placeholder="Descrição completa" />
 
         <Input name="date" placeholder="Data do meetup" />
-        <Input name="local" placeholder="Localização" />
+        <Input name="location" placeholder="Localização" />
 
         <Button type="submit">
           <MdAddCircleOutline />
