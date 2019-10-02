@@ -19,8 +19,8 @@ export default function Routes() {
 
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
-      <Route path="/:MeetupId/details" component={Details} isPrivate />
-      <Route path="/:MeetupId/edit" component={Edit} isPrivate />
+      <Route path="/:meetupId/details" component={Details} isPrivate />
+      <Route path="/:meetupId/edit" component={Edit} isPrivate />
       <Route path="/new" component={New} isPrivate />
 
       <Route path="/" component={() => <h1>404 Page Not Found</h1>} />

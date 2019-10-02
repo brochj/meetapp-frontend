@@ -43,6 +43,12 @@ export const ContentItem = styled.div`
   margin-bottom: 15px;
   border-radius: 5px;
   padding: 20px 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
 
   strong {
     color: #f2f2f2;
