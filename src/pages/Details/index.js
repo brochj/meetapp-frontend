@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { MdDeleteForever, MdEdit, MdPlace, MdDateRange } from 'react-icons/md';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
@@ -13,7 +14,10 @@ import {
 import banner from '~/assets/banner.png';
 import Button from '~/components/Button';
 
+import { deleteMeetupRequest } from '~/store/modules/meetup/actions';
+
 export default function Details({ match, location }) {
+  const dispatch = useDispatch();
   const meetup = location.state.state;
   const [showAlert, setShowAlert] = useState(false);
 
@@ -24,12 +28,13 @@ export default function Details({ match, location }) {
           danger
           showCancel
           cancelBtnText="Cancelar!"
-          confirmBtnText="Sim, deletar!"
+          confirmBtnText="Sim, deletar"
           showCloseButton
           confirmBtnBsStyle="danger"
           cancelBtnBsStyle="default"
           title="Você tem certeza?"
           onConfirm={() => {
+            dispatch(deleteMeetupRequest(meetup.id));
             setShowAlert(false);
           }}
           onCancel={() => {

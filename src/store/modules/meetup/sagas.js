@@ -8,6 +8,7 @@ import {
   getMeetupsSuccess,
   meetupFailure,
   createMeetupSuccess,
+  deleteMeetupSuccess,
 } from './actions';
 
 export function* getMeetups() {
@@ -39,7 +40,24 @@ export function* createMeetup({ payload }) {
   }
 }
 
+export function* deleteMeetup({ payload }) {
+  try {
+    const { id } = payload;
+
+    yield call(api.delete, `meetups/${id}`);
+
+    yield put(deleteMeetupSuccess());
+    toast.success('Meetup deletado com sucesso');
+    history.push('/dashboard');
+  } catch (err) {
+    toast.error('Erro ao deletar o meetup, tente novamente mais tarde');
+
+    yield put(meetupFailure());
+  }
+}
+
 export default all([
   takeLatest('@meetup/GET_MEETUPS_REQUEST', getMeetups),
   takeLatest('@meetup/CREATE_MEETUP_REQUEST', createMeetup),
+  takeLatest('@meetup/DELETE_MEETUP_REQUEST', deleteMeetup),
 ]);
