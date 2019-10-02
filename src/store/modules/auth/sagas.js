@@ -33,7 +33,7 @@ export function* signUp({ payload }) {
     const { name, email, password } = payload;
 
     yield call(api.post, 'users', { name, email, password, provider: true });
-
+    toast.success('Conta criada com sucesso!');
     history.push('/');
   } catch (err) {
     toast.error('Falha no cadastro, verifique seus dados');
