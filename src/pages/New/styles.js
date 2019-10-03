@@ -82,3 +82,32 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const ButtonView = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  button {
+    display: flex;
+    justify-content: center;
+    height: 42px;
+    width: fit-content;
+    align-self: flex-end;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    svg {
+      margin-right: 10px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .cancelBtn {
+    transition: background 0.3s;
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+`;

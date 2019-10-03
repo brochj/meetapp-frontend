@@ -3,8 +3,8 @@ import { Form, Input } from '@rocketseat/unform';
 import { useDispatch } from 'react-redux';
 import { MdAddCircleOutline } from 'react-icons/md';
 import * as Yup from 'yup';
-
-import { Container } from './styles';
+import history from '~/services/history';
+import { Container, ButtonView } from './styles';
 
 import Banner from './Banner';
 
@@ -57,10 +57,21 @@ export default function New() {
         />
         <Input name="location" placeholder="Localização" />
 
-        <Button type="submit">
-          <MdAddCircleOutline />
-          Criar meetup
-        </Button>
+        <ButtonView>
+          <Button
+            className="cancelBtn"
+            type="button"
+            background="rgba(0,0,0,.01)"
+            onClick={() => history.push('/dashboard')}
+          >
+            Cancelar
+          </Button>
+
+          <Button type="submit">
+            <MdAddCircleOutline />
+            Criar meetup
+          </Button>
+        </ButtonView>
       </Form>
     </Container>
   );
