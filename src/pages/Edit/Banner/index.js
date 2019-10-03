@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useField } from '@rocketseat/unform';
 
 import { MdAddAPhoto } from 'react-icons/md';
@@ -59,3 +60,7 @@ export default function BannerInput({ fileUrl }) {
     </Container>
   );
 }
+
+BannerInput.propTypes = {
+  fileUrl: PropTypes.string.isRequired,
+};

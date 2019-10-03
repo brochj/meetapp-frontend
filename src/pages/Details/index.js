@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { MdDeleteForever, MdEdit, MdPlace, MdDateRange } from 'react-icons/md';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
@@ -17,7 +18,7 @@ import history from '~/services/history';
 
 import { deleteMeetupRequest } from '~/store/modules/meetup/actions';
 
-export default function Details({ match, location }) {
+export default function Details({ location }) {
   const dispatch = useDispatch();
   const meetup = location.state;
   const [showAlert, setShowAlert] = useState(false);
@@ -89,3 +90,20 @@ export default function Details({ match, location }) {
     </Container>
   );
 }
+
+Details.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      location: PropTypes.string,
+      description: PropTypes.string,
+      timezonedDate: PropTypes.string,
+      past: PropTypes.bool,
+      url: PropTypes.string,
+      File: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    }),
+  }).isRequired,
+};

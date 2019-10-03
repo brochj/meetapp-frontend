@@ -20,7 +20,7 @@
     "react-perfect-scrollbar": "^1.5.3",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.1",
-    "react-scripts": "3.1.2",
+    "react-scripts": "3.0.1",
     "react-toastify": "^5.4.0",
     "reactotron-react-js": "^3.3.4",
     "reactotron-redux": "^3.1.2",
@@ -54,7 +54,7 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "10.0.2",
     "babel-plugin-root-import": "^6.4.1",
     "customize-cra": "^0.7.0",
     "eslint": "^6.4.0",

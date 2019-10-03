@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { NButton } from './styles';
 
-export default function Button({ children, background, color, ...rest }) {
+export default function Button({ children, background, color, ...props }) {
   return (
-    <NButton {...rest} background={background} color={color}>
+    <NButton {...props} background={background} color={color}>
       {children}
     </NButton>
   );

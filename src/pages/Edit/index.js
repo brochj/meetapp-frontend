@@ -1,15 +1,15 @@
 import React from 'react';
-import { format, parseISO } from 'date-fns';
-import { Form, Input } from '@rocketseat/unform';
-import { useDispatch } from 'react-redux';
-import { MdAddCircleOutline } from 'react-icons/md';
+import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-import { Container, ButtonView } from './styles';
+import { Form, Input } from '@rocketseat/unform';
+import { format, parseISO } from 'date-fns';
+import { MdAddCircleOutline } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
 
 import Banner from './Banner';
-import history from '~/services/history';
-
 import Button from '~/components/Button';
+import history from '~/services/history';
+import { Container, ButtonView } from './styles';
 
 import { updateMeetupRequest } from '~/store/modules/meetup/actions';
 
@@ -78,3 +78,9 @@ export default function Edit({ location }) {
     </Container>
   );
 }
+
+Edit.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.object.isRequired,
+  }).isRequired,
+};
