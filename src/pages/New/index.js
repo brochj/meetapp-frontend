@@ -51,7 +51,10 @@ export default function New() {
         <Input name="title" placeholder="Título do Meetup" />
         <Input multiline name="description" placeholder="Descrição completa" />
 
-        <Input name="date" placeholder="Data do meetup" />
+        <Input
+          name="date"
+          placeholder="Data do meetup. Exemplo '12/12/2019 , às 15 h'"
+        />
         <Input name="location" placeholder="Localização" />
 
         <Button type="submit">
